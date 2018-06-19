@@ -48,7 +48,17 @@ class set_kaart:
 
         return kaart_3
 
+def maakstapel():
+    set_stapel = []
+    for i in range (3):
+        for j in range (3):
+            for k in range (3):
+                for l in range (3):
+                    set_stapel.append(set_kaart(i,j,k,l))
+    return(set_stapel)
+
 a = set_kaart(twee,golf,blauw,gespikkeld)
 b = set_kaart(een,rechthoek,groen,leeg)
 
 print(a.derde_kaart(b))
+print(maakstapel())
