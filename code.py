@@ -60,7 +60,7 @@ def maakstapel():
     return(set_stapel)
 
 def kaartenoptafel():
-    kaarten_tafel: []
+    kaarten_tafel = []
     set_stapel = maakstapel()
     for i in range(12):
         a = set_stapel.pop(random.randrange(0,len(set_stapel)))
