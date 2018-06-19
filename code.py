@@ -16,6 +16,11 @@ drie = 2
 
 class set_kaart:
 
+    def __repr__(self):
+        return (f'{self.__class__.__qualname__}'
+                f'(aantal={self.aantal},vorm={self.vorm},'
+                f'kleur={self.kleur},vulling={self.vulling})')
+
     def __init__(self, aantal = 0, vorm = 0, kleur = 0, vulling = 0):
         self.aantal = aantal
         self.vorm = vorm
@@ -24,7 +29,7 @@ class set_kaart:
 
     def derde_kaart(self, other):
 
-        kaart_3 == set_kaart()
+        kaart_3 = set_kaart()
 
         def eigenschap_kaart(set_kaart, eigenschap, eigenschap_1, eigenschap_2):
 
@@ -37,25 +42,14 @@ class set_kaart:
 
             return set_kaart.eigenschap
 
-        kaart_3.aantal = eigenschap_kaart(kaart_3, aantal, self.aantal, other.aantal)
-        kaart_3.vorm = eigenschap_kaart(kaart_3, vorm, self.vorm, other.vorm)
-        kaart_3.kleur = eigenschap_kaart(kaart_3, kleur, self.kleur, other.kleur)
-        kaart_3.vulling = eigenschap_kaart(kaart_3, vulling, self.vulling, other.vulling)
+        kaart_3.aantal = eigenschap_kaart(kaart_3, 'aantal', self.aantal, other.aantal)
+        kaart_3.vorm = eigenschap_kaart(kaart_3, 'vorm', self.vorm, other.vorm)
+        kaart_3.kleur = eigenschap_kaart(kaart_3, 'kleur', self.kleur, other.kleur)
+        kaart_3.vulling = eigenschap_kaart(kaart_3, 'vulling', self.vulling, other.vulling)
 
         return kaart_3
 
+a = set_kaart(twee,golf,blauw,gespikkeld)
+b = set_kaart(een,rechthoek,groen,leeg)
 
-    #def __add__ (self, other):
-        #for i in range(4):
-            #self[i] += other[i]
-        #return self
-
-    #def derde_kaart(self, other):
-
-        #kaart_3 = self + other
-
-        #for i in range(4):
-            #if kaart_3[i]%3 == 1:
-                #kaart_3[i] += 2
-            #if kaart_3[i]%3 == 2:
-                #kaart_3[i] += 1
+print(a.derde_kaart(b))
