@@ -14,6 +14,8 @@ een = 0
 twee = 1
 drie = 2
 
+hallo
+
 class set_kaart:
 
     def __repr__(self):
