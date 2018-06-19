@@ -1,4 +1,6 @@
-ovaal = 0
+import random
+
+ovaal= 0
 rechthoek = 1
 golf = 2
 
@@ -61,4 +63,5 @@ a = set_kaart(twee,golf,blauw,gespikkeld)
 b = set_kaart(een,rechthoek,groen,leeg)
 
 print(a.derde_kaart(b))
-print(maakstapel())
+set_stapel = maakstapel()
+print(set_stapel.pop(random.randrange(0,len(set_stapel)))) #haalt willekeurige kaart uit stapel
