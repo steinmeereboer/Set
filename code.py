@@ -59,6 +59,10 @@ def maakstapel():
                     set_stapel.append(set_kaart(i,j,k,l))
     return(set_stapel)
 
+def kaartenoptafel():
+    kaarten_tafel: []
+    
+        set_stapel.pop(random.randrange(0,len(set_stapel)))
 a = set_kaart(twee,golf,blauw,gespikkeld)
 b = set_kaart(een,rechthoek,groen,leeg)
 #:)
