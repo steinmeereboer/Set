@@ -26,12 +26,21 @@ class set_kaart:
 
         kaart_3 == set_kaart()
 
-        if if (self.aantal + other.aantal)%3 == 0:
-            kaart_3.aantal == self.aantal + other.aantal
-        if (self.aantal + other.aantal)%3 == 1:
-            kaart_3.aantal == self.aantal + other.aantal + 2
-        if (self.aantal + other.aantal)%3 == 2:
-            kaart_3.aantal == self.aantal + other.aantal + 1
+        def eigenschap_kaart(set_kaart, eigenschap, eigenschap_1, eigenschap_2):
+
+            if (eigenschap_1 + eigenschap_2)%3 == 0:
+                set_kaart.eigenschap = 0
+            if (eigenschap_1 + eigenschap_2)%3 == 1:
+                set_kaart.eigenschap = 2
+            if (eigenschap_1 + eigenschap_2)%3 == 2:
+                set_kaart.eigenschap = 1
+
+            return set_kaart.eigenschap
+
+        kaart_3.aantal = eigenschap_kaart(kaart_3, aantal, self.aantal, other.aantal)
+        kaart_3.vorm = eigenschap_kaart(kaart_3, vorm, self.vorm, other.vorm)
+        kaart_3.kleur = eigenschap_kaart(kaart_3, kleur, self.kleur, other.kleur)
+        kaart_3.vulling = eigenschap_kaart(kaart_3, vulling, self.vulling, other.vulling)
 
         return kaart_3
 
