@@ -14,7 +14,6 @@ een = 0
 twee = 1
 drie = 2
 
-hallo
 
 class set_kaart:
 
@@ -35,8 +34,6 @@ class set_kaart:
 
         def eigenschap_kaart(set_kaart, eigenschap, eigenschap_1, eigenschap_2):
 
-            if (eigenschap_1 + eigenschap_2)%3 == 0:
-                set_kaart.eigenschap = 0
             if (eigenschap_1 + eigenschap_2)%3 == 1:
                 set_kaart.eigenschap = 2
             if (eigenschap_1 + eigenschap_2)%3 == 2:
