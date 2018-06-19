@@ -33,20 +33,20 @@ class set_kaart:
         if (self.aantal + other.aantal)%3 == 2:
             kaart_3.aantal == self.aantal + other.aantal + 1
 
+        return kaart_3
 
 
+    #def __add__ (self, other):
+        #for i in range(4):
+            #self[i] += other[i]
+        #return self
 
-    def __add__ (self, other):
-        for i in range(4):
-            self[i] += other[i]
-        return self
+    #def derde_kaart(self, other):
 
-    def derde_kaart(self, other):
+        #kaart_3 = self + other
 
-        kaart_3 = self + other
-
-        for i in range(4):
-            if kaart_3[i]%3 == 1:
-                kaart_3[i] += 2
-            if kaart_3[i]%3 == 2:
-                kaart_3[i] += 1
+        #for i in range(4):
+            #if kaart_3[i]%3 == 1:
+                #kaart_3[i] += 2
+            #if kaart_3[i]%3 == 2:
+                #kaart_3[i] += 1
