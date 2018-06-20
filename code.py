@@ -16,7 +16,6 @@ een = 0
 twee = 1
 drie = 2
 
-
 class set_kaart:
 
     def __repr__(self):
@@ -31,23 +30,19 @@ class set_kaart:
         self.vulling = vulling
 
     def derde_kaart(self, other):
-
         kaart_3 = set_kaart()
 
         def eigenschap_kaart(set_kaart, eigenschap, eigenschap_1, eigenschap_2):
-
             if (eigenschap_1 + eigenschap_2)%3 == 1:
                 set_kaart.eigenschap = 2
             if (eigenschap_1 + eigenschap_2)%3 == 2:
                 set_kaart.eigenschap = 1
-
             return set_kaart.eigenschap
 
         kaart_3.aantal = eigenschap_kaart(kaart_3, 'aantal', self.aantal, other.aantal)
         kaart_3.vorm = eigenschap_kaart(kaart_3, 'vorm', self.vorm, other.vorm)
         kaart_3.kleur = eigenschap_kaart(kaart_3, 'kleur', self.kleur, other.kleur)
         kaart_3.vulling = eigenschap_kaart(kaart_3, 'vulling', self.vulling, other.vulling)
-
         return kaart_3
 
 def maakstapel():
@@ -65,7 +60,6 @@ def kaartenoptafel():
     for i in range(12):
         a = set_stapel.pop(random.randrange(0,len(set_stapel)))
         kaarten_tafel.append(a)
-
     return kaarten_tafel
 
 a = set_kaart(twee,golf,blauw,gespikkeld)
