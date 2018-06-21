@@ -65,6 +65,15 @@ class set_kaart:
                             return([kaart_1, kaart_2, kaart_3])
                             break
 
+    def vind_alle_set(lijst):
+        for kaart_1 in lijst:
+            for kaart_2 in lijst:
+                if kaart_2 != kaart_1:
+                    for kaart_3 in lijst:
+                        if  kaart_3 == set_kaart.derde_kaart(kaart_1, kaart_2):
+                            return([kaart_1, kaart_2, kaart_3])
+
+
 def maakstapel():
     set_stapel = []
     for i in range (3):
@@ -84,7 +93,8 @@ def kaartenoptafel():
 
     return kaarten_tafel
 
-b = kaartenoptafel()
-print(b)
+b = maakstapel()
+
 
 print (set_kaart.vind_set(b))
+print(set_kaart.vind_alle_set(b))
