@@ -53,11 +53,13 @@ class set_kaart:
         return kaart_3
 
     def vind_set(lijst):
-        for i in range (len(lijst)):
-            for j in range (i,len(lijst)):
-                for k in range(len(lijst)):
-                    if  lijst[k] == set_kaart.derde_kaart(lijst[i], lijst[j]):
-                        return([set_kaart.derde_kaart(lijst[i], lijst[j]), lijst[i], lijst[j]])
+        for kaart_1 in lijst:
+            for kaart_2 in lijst:
+                if kaart_2 != kaart_1:
+                    for kaart_3 in lijst:
+                        if  kaart_3 == set_kaart.derde_kaart(kaart_1, kaart_2):
+                            return([kaart_1, kaart_2, kaart_3])
+                            break
 
 def maakstapel():
     set_stapel = []
