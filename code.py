@@ -66,12 +66,14 @@ class set_kaart:
                             break
 
     def vind_alle_set(lijst):
+        alle_sets = []
         for kaart_1 in lijst:
             for kaart_2 in lijst:
                 if kaart_2 != kaart_1:
                     for kaart_3 in lijst:
                         if  kaart_3 == set_kaart.derde_kaart(kaart_1, kaart_2):
-                            return([kaart_1, kaart_2, kaart_3])
+                            alle_sets.append([kaart_1, kaart_2, kaart_3])
+        return(alle_sets)
 
 
 def maakstapel():
@@ -93,7 +95,7 @@ def kaartenoptafel():
 
     return kaarten_tafel
 
-b = maakstapel()
+b = kaartenoptafel()
 
 
 print (set_kaart.vind_set(b))
