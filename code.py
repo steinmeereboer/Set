@@ -1,21 +1,9 @@
 import random
 
-ovaal= 0
-rechthoek = 1
-golf = 2
-
-blauw = 0
-groen = 1
-roze = 2
-
-leeg = 0
-vol = 1
-gespikkeld = 2
-
-een = 0
-twee = 1
-drie = 2
-
+ovaal, rechthoek, golf = range(3)
+blauw, groen, roze = range(3)
+leeg, vol, gespikkeld = range(3)
+een, twee, drie = range(3)
 
 class set_kaart:
 
