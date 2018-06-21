@@ -22,7 +22,7 @@ class set_kaart:
     def __eq__(self, other):
         return (self.aantal == other.aantal and self.vorm == other.vorm
                 and self.kleur == other.kleur and self.vulling == other.vulling)
-                
+
     def __repr__(self):
         return (f'{self.__class__.__qualname__}'
                 f'(aantal={self.aantal},vorm={self.vorm},'
@@ -84,7 +84,7 @@ def kaartenoptafel():
 
     return kaarten_tafel
 
-b = maakstapel()
+b = kaartenoptafel()
 print(b)
 
 print (set_kaart.vind_set(b))
