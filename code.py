@@ -79,5 +79,6 @@ def kaartenoptafel():
     return kaarten_tafel
 
 b = maakstapel()
+print(b)
 
 print (set_kaart.vind_set(b))
