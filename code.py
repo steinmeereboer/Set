@@ -54,9 +54,10 @@ class set_kaart:
 
     def vind_set(lijst):
         for i in range (len(lijst)):
-            for j in range (i, len(lijst)):
-                if  set_kaart.derde_kaart(lijst[i], lijst[j]) in lijst:
-                    return [set_kaart.derde_kaart(lijst[i], lijst[j]), lijst[i], lijst[j]]
+            for j in range (i,len(lijst)):
+                for k in range(len(lijst)):
+                    if  lijst[k] == set_kaart.derde_kaart(lijst[i], lijst[j]):
+                        return([set_kaart.derde_kaart(lijst[i], lijst[j]), lijst[i], lijst[j]])
 
 def maakstapel():
     set_stapel = []
@@ -71,16 +72,12 @@ set_stapel = maakstapel()
 
 def kaartenoptafel():
     kaarten_tafel = []
-    for i in range(30):
+    for i in range(12):
         a = set_stapel.pop(random.randrange(0,len(set_stapel)))
         kaarten_tafel.append(a)
 
     return kaarten_tafel
 
-a = set_kaart(twee,golf,blauw,gespikkeld)
-b = set_kaart(een,rechthoek,groen,leeg)
-#:)
-
-b = kaartenoptafel()
+b = maakstapel()
 
 print (set_kaart.vind_set(b))
