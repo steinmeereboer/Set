@@ -16,6 +16,7 @@ een = 0
 twee = 1
 drie = 2
 
+
 class set_kaart:
 
     def __repr__(self):
@@ -30,20 +31,32 @@ class set_kaart:
         self.vulling = vulling
 
     def derde_kaart(self, other):
+
         kaart_3 = set_kaart()
 
         def eigenschap_kaart(set_kaart, eigenschap, eigenschap_1, eigenschap_2):
+
+            if (eigenschap_1 + eigenschap_2)%3 == 0:
+                set_kaart.eigenschap = 0
             if (eigenschap_1 + eigenschap_2)%3 == 1:
                 set_kaart.eigenschap = 2
             if (eigenschap_1 + eigenschap_2)%3 == 2:
                 set_kaart.eigenschap = 1
+
             return set_kaart.eigenschap
 
         kaart_3.aantal = eigenschap_kaart(kaart_3, 'aantal', self.aantal, other.aantal)
         kaart_3.vorm = eigenschap_kaart(kaart_3, 'vorm', self.vorm, other.vorm)
         kaart_3.kleur = eigenschap_kaart(kaart_3, 'kleur', self.kleur, other.kleur)
         kaart_3.vulling = eigenschap_kaart(kaart_3, 'vulling', self.vulling, other.vulling)
+
         return kaart_3
+
+    def vind_set(lijst):
+        for i in range (len(lijst)):
+            for j in range (i, len(lijst)):
+                if  set_kaart.derde_kaart(lijst[i], lijst[j]) in lijst:
+                    return [set_kaart.derde_kaart(lijst[i], lijst[j]), lijst[i], lijst[j]]
 
 def maakstapel():
     set_stapel = []
@@ -54,16 +67,20 @@ def maakstapel():
                     set_stapel.append(set_kaart(i,j,k,l))
     return(set_stapel)
 
+set_stapel = maakstapel()
+
 def kaartenoptafel():
     kaarten_tafel = []
-    set_stapel = maakstapel()
-    for i in range(12):
+    for i in range(30):
         a = set_stapel.pop(random.randrange(0,len(set_stapel)))
         kaarten_tafel.append(a)
+
     return kaarten_tafel
 
 a = set_kaart(twee,golf,blauw,gespikkeld)
 b = set_kaart(een,rechthoek,groen,leeg)
+#:)
 
-print(a.derde_kaart(b))
-print(kaartenoptafel())
+b = kaartenoptafel()
+
+print (set_kaart.vind_set(b))
