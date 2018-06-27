@@ -13,14 +13,9 @@ def startspel():
             indices = a[0], a[1], a[2]
             tafel = [i for j, i in enumerate(tafel) if j not in indices]
             for i in range(3):
-                a = set.set_stapel.pop(random.randrange(0,len(set_stapel)))
+                a = set_stapel.pop(random.randrange(0,len(set_stapel)))
                 tafel.append(a)
         print(tafel)
     return tafel
 
 set_stapel = set.maakstapel()
-
-print(len(set_stapel))
-for i in range(3):
-    a = set_stapel.pop(random.randrange(0,len(set_stapel)))
-print(len(set_stapel))
