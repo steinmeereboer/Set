@@ -83,6 +83,12 @@ def kaartenoptafel():
 
     return kaarten_tafel
 
+def zietafel():
+    print(b[0:3])
+    print(b[3:6])
+    print(b[6:9])
+    print(b[9:12])
+
 b = kaartenoptafel()
 
 print (set_kaart.vind_set(b))
