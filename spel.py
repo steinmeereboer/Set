@@ -1,5 +1,5 @@
-print('hey')
-import code.py
-#b=maakstapel()
-#print(b)
-print('hey')
+# spel.py
+
+import Klassen_en_functies
+b=code.set_kaart()
+print(b)

@@ -85,6 +85,5 @@ def kaartenoptafel():
 
 b = kaartenoptafel()
 
-
 print (set_kaart.vind_set(b))
 print(set_kaart.vind_alle_set(b))
