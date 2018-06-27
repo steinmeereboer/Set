@@ -88,8 +88,3 @@ def zietafel():
     print(b[3:6])
     print(b[6:9])
     print(b[9:12])
-
-b = kaartenoptafel()
-
-print (set_kaart.vind_set(b))
-print(set_kaart.vind_alle_set(b))
