@@ -27,3 +27,5 @@ if vind_alle_set(tafel) == []:
         tafel.append(nieuwe_kaart)
 
 set_stapel = set.maakstapel()
+
+#test
