@@ -2,9 +2,9 @@ import Klassen_en_functies as set
 import random
 
 
-def startspel():
-    set_stapel = set.maakstapel()
-    tafel = set.kaartenoptafel()
+def start_spel():
+    set_stapel = set.maak_stapel()
+    tafel = set.kaarten_op_tafel()
     while len(set_stapel) != 0:
         speler_invoer = [int(i) for i in input().split()]
         if (set.set_kaart.derde_kaart(tafel[speler_invoer[0]],
