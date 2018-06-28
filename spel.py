@@ -19,4 +19,11 @@ def start_spel():
         print(tafel)
     return tafel
 
+if vind_alle_set(tafel) == []:
+    indices = 0, 1, 2
+    tafel = [i for j, i in enumerate(tafel) if j not in indices]
+    for i in range(3):
+        nieuwe_kaart = set_stapel.pop(random.randrange(0,len(set_stapel)))
+        tafel.append(nieuwe_kaart)
+
 set_stapel = set.maakstapel()
