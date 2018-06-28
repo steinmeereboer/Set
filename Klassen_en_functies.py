@@ -22,21 +22,19 @@ class set_kaart:
         self.kleur = kleur
         self.vulling = vulling
 
-
     #Functie die bij twee setkaarten een derde kaart vindt zodat ze samen een set vormen
     def derde_kaart(self, other):
 
         kaart_3 = set_kaart()
 
+        #Functie die de eigenschappen van de derde kaart bepaalt
         def eigenschap_kaart(set_kaart, eigenschap, eigenschap_1, eigenschap_2):
-
             if (eigenschap_1 + eigenschap_2)%3 == 0:
-                set_kaart.eigenschap = 0
+                setkaart.eigenschap = 0
             if (eigenschap_1 + eigenschap_2)%3 == 1:
-                set_kaart.eigenschap = 2
+                setkaart.eigenschap = 2
             if (eigenschap_1 + eigenschap_2)%3 == 2:
-                set_kaart.eigenschap = 1
-
+                setkaart.eigenschap = 1
             return set_kaart.eigenschap
 
         kaart_3.aantal = eigenschap_kaart(kaart_3, 'aantal', self.aantal, other.aantal)
@@ -57,7 +55,7 @@ class set_kaart:
                             break
 
     #Functie die alle sets vindt in een lijst van setkaarten
-    def vind_alle_set(lijst):
+    def vind_alle_sets(lijst):
         alle_sets = []
         for kaart_1 in lijst:
             for kaart_2 in lijst:
@@ -68,7 +66,7 @@ class set_kaart:
         return(alle_sets)
 
 #Functie die de 81 unieke setkaarten maakt en hier een stapel van maakt
-def maakstapel():
+def maak_stapel():
     set_stapel = []
     for i in range (3):
         for j in range (3):
@@ -77,27 +75,19 @@ def maakstapel():
                     set_stapel.append(set_kaart(i,j,k,l))
     return(set_stapel)
 
-set_stapel = maakstapel()
+set_stapel = maak_stapel()
 
 #Functie die 12 willekeurige kaarten uit de stapel kiest en toevoegt aan de kaarten op tafel
-def kaartenoptafel():
-    kaarten_tafel = []
+def kaarten_op_tafel():
+    kaarten_op_tafel = []
     for i in range(12):
-        a = set_stapel.pop(random.randrange(0,len(set_stapel)))
-        kaarten_tafel.append(a)
+        setkaart = set_stapel.pop(random.randrange(0,len(set_stapel)))
+        kaarten_tafel.append(setkaart)
+    return kaarten_op_tafel
 
-    return kaarten_tafel
-
-
-def zietafel():
+def zie_tafel():
+    b = kaarten_op_tafel()
     print(b[0:3])
     print(b[3:6])
     print(b[6:9])
     print(b[9:12])
-
-if vind_alle_set(tafel) == []:
-    indices = 0, 1, 2
-    tafel = [i for j, i in enumerate(tafel) if j not in indices]
-    for i in range(3):
-        nieuwe_kaart = set_stapel.pop(random.randrange(0,len(set_stapel)))
-        tafel.append(nieuwe_kaart)
