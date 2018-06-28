@@ -22,6 +22,8 @@ class set_kaart:
         self.kleur = kleur
         self.vulling = vulling
 
+
+    #Functie die bij twee setkaarten een derde kaart vindt zodat ze samen een set vormen
     def derde_kaart(self, other):
 
         kaart_3 = set_kaart()
@@ -44,6 +46,7 @@ class set_kaart:
 
         return kaart_3
 
+    #Functie die een set vindt in een lijst van setkaarten
     def vind_set(lijst):
         for kaart_1 in lijst:
             for kaart_2 in lijst:
@@ -53,6 +56,7 @@ class set_kaart:
                             return([kaart_1, kaart_2, kaart_3])
                             break
 
+    #Functie die alle sets vindt in een lijst van setkaarten
     def vind_alle_set(lijst):
         alle_sets = []
         for kaart_1 in lijst:
@@ -63,7 +67,7 @@ class set_kaart:
                             alle_sets.append([kaart_1, kaart_2, kaart_3])
         return(alle_sets)
 
-
+#Functie die de 81 unieke setkaarten maakt en hier een stapel van maakt
 def maakstapel():
     set_stapel = []
     for i in range (3):
@@ -75,6 +79,7 @@ def maakstapel():
 
 set_stapel = maakstapel()
 
+#Functie die 12 willekeurige kaarten uit de stapel kiest en toevoegt aan de kaarten op tafel
 def kaartenoptafel():
     kaarten_tafel = []
     for i in range(12):
@@ -83,8 +88,16 @@ def kaartenoptafel():
 
     return kaarten_tafel
 
+
 def zietafel():
     print(b[0:3])
     print(b[3:6])
     print(b[6:9])
     print(b[9:12])
+
+if vind_alle_set(tafel) == []:
+    indices = 0, 1, 2
+    tafel = [i for j, i in enumerate(tafel) if j not in indices]
+    for i in range(3):
+        nieuwe_kaart = set_stapel.pop(random.randrange(0,len(set_stapel)))
+        tafel.append(nieuwe_kaart)
