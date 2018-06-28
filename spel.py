@@ -4,6 +4,8 @@ import time
 
 
 def startspel():
+    punten_jij = 0
+    punten_computer = 0
     set_stapel = set.maakstapel()
     tafel = set.kaartenoptafel()
     while len(set_stapel) > 2:
@@ -14,6 +16,7 @@ def startspel():
             if set.set_kaart.derde_kaart(tafel[a[0]], tafel[a[1]]) == tafel[a[2]]:
                 indices = a[0], a[1], a[2]
                 tafel = [i for j, i in enumerate(tafel) if j not in indices]
+                punten_jij += 1
     
                 for i in range(3):
                     a = set_stapel.pop(random.randrange(0,len(set_stapel)))
@@ -33,13 +36,15 @@ def startspel():
             tafel.remove(driekaarten[2])
             tafel.remove(driekaarten[1])
             tafel.remove(driekaarten[0])
+            punten_computer += 1
             for i in range(3):
                     a = set_stapel.pop(random.randrange(0,len(set_stapel)))
                     tafel.append(a)   
             
             
         
-    return 128
+    return print("Jij hebt", punten_jij , "punten en de computer heeft" 
+                 , punten_computer , "punten. ")
 
 
 startspel()
