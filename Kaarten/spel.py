@@ -33,7 +33,7 @@ def start_spel():
     #Laat de kaarten op tafel zien
     Gui.weergave(tafel)
     #while len(set_stapel) >= 0 and len(tafel)==12: #
-        #gui.ververs_weergave(tafel)
+        #gui.weergave(tafel)
     #    start = time.perf_counter() #begin van je denktijd
     #    speler_invoer = [int(i)-1  for i in input().split()]
 
@@ -57,7 +57,7 @@ def start_spel():
     #set_stapel = klasse.maak_stapel()
     #tafel = klasse.kaarten_op_tafel()
     while len(set_stapel) > 2:
-        gui.ververs_weergave(tafel)
+        gui.weergave(tafel)
         #print(tafel)
         start = time.perf_counter()
         if time.perf_counter() - start < 5:
