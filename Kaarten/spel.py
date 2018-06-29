@@ -22,6 +22,8 @@ def start_spel():
         tijd = 20
     if invoer_moeilijkheidsgraad == "extreem":
         tijd = 12
+    else:
+        pass
 
     print("Heel veel succes", naam, "! De kaarten komen er aan!")
 
