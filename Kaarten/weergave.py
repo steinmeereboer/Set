@@ -1,6 +1,6 @@
 import pygame as pg
 import Klassen_en_functies as kf
-def weergave(kaarten_op_tafel):
+def weergeef(kaarten_op_tafel):
     pg.init()
 
     screen = pg.display.set_mode((450,800))
@@ -62,9 +62,6 @@ def weergave(kaarten_op_tafel):
     #Laat de kaarten zien
     pg.display.update()
 def ververs_weergave(kaarten_op_tafel):
-    screen = pg.display.set_mode((450,800))
-    screen.fill((255,255,255))
-    
     #Laad afbeelding en pas grootte aan
     #kaarten_op_tafel=kf.kaarten_op_tafel()
 

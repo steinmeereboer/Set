@@ -58,6 +58,9 @@ def vind_alle_sets(lijst):
     alle_sets = set()
     for kaart_1, kaart_2 in combinations(lijst, 2):
         kaart_3 = set_kaart.derde_kaart(kaart_1, kaart_2)
+        print(kaart_1)
+        print(kaart_2)
+        print(kaart_3)
         if kaart_3 in lijst:
             alle_sets.add({kaart_1, kaart_2, kaart_3})
     return alle_sets
@@ -70,9 +73,8 @@ def maak_stapel():
     return set_stapel
 
 #Functie die 12 willekeurige kaarten uit de stapel kiest en toevoegt aan de kaarten op tafel
-def kaarten_op_tafel():
+def kaarten_op_tafel(set_stapel):
     kaarten_op_tafel = []
-    set_stapel = maak_stapel()
     for i in range(12):
         setkaart = set_stapel.pop(random.randrange(0,len(set_stapel)))
         kaarten_op_tafel.append(setkaart)
@@ -84,5 +86,4 @@ def zie_tafel():
     print(b[3:6])
     print(b[6:9])
     print(b[9:12])
-
 
