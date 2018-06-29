@@ -4,7 +4,7 @@ import random
 import time
 import pygame
 import Klassen_en_functies as klasse
-import Gui
+import gui
 
 def start_spel():
     '''Uitleg van de functie'''

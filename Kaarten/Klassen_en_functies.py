@@ -77,6 +77,3 @@ def kaarten_op_tafel(lijst):
         setkaart = lijst.pop(random.randrange(0, len(lijst)))
         tafelkaarten[i] = setkaart
     return tafelkaarten
-
-a = maak_stapel
-print(a)
