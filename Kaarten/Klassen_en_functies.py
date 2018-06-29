@@ -58,9 +58,6 @@ def vind_alle_sets(lijst):
     alle_sets = set()
     for kaart_1, kaart_2 in combinations(lijst, 2):
         kaart_3 = set_kaart.derde_kaart(kaart_1, kaart_2)
-        print(kaart_1)
-        print(kaart_2)
-        print(kaart_3)
         if kaart_3 in lijst:
             alle_sets.add({kaart_1, kaart_2, kaart_3})
     return alle_sets
