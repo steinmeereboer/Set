@@ -21,7 +21,7 @@ def weergave(kaarten_op_tafel):
     k3 = pg.transform.scale(b3, (150, 200))
 
     b4 = pg.image.load(str(kaarten_op_tafel[3])+'.png')
-    k4 = pg.transform.scale(b4,(150,200))
+    k4 = pg.transform.scale(b4, (150,200))
 
     b5 = pg.image.load(str(kaarten_op_tafel[4])+'.png')
     k5 = pg.transform.scale(b5, (150, 200))
@@ -60,7 +60,7 @@ def weergave(kaarten_op_tafel):
     lab10 = font.render("10", 1, (0,0,0))
     lab11 = font.render("11", 1, (0,0,0))
     lab12 = font.render("12", 1, (0,0,0))
-    
+
     #Plaats de kaarten
     screen.blit(k1, (0, 0))
     screen.blit(k2, (150, 0))
@@ -74,7 +74,7 @@ def weergave(kaarten_op_tafel):
     screen.blit(k10, (0, 600))
     screen.blit(k11, (150, 600))
     screen.blit(k12, (300, 600))
-    
+
     #Plaats de labels
     screen.blit(lab1, (75, 183))
     screen.blit(lab2, (225, 183))
