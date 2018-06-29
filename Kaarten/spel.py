@@ -36,23 +36,23 @@ def start_spel():
     gui.weergave(tafel)
     #while len(set_stapel) >= 0 and len(tafel)==12: #
         #gui.weergave(tafel)
-    #    start = time.perf_counter() #begin van je denktijd
-    #    speler_invoer = [int(i)-1  for i in input().split()]
+        #start = time.perf_counter() #begin van je denktijd
+        #speler_invoer = [int(i)-1  for i in input().split()]
 
-    #    geldigheid_invoer = (len(speler_invoer) == 3 and 0<=speler_invoer[0]<=11
-    #        and 0<=speler_invoer[1]<=11 and 0<=speler_invoer[2]<=11)
-        #kijkt of het een geldige invoer is
+        #geldigheid_invoer = (len(speler_invoer) == 3 and 0<=speler_invoer[0]<=11
+        #    and 0<=speler_invoer[1]<=11 and 0<=speler_invoer[2]<=11)
+       #kijkt of het een geldige invoer is
 
-    #    if geldigheid_invoer == True:
-    #        set_klopt =  (klasse.set_kaart.derde_kaart(tafel[speler_invoer[0]],
-    #        tafel[speler_invoer[1]]) == tafel[speler_invoer[2]])
+        #if geldigheid_invoer == True:
+        #    set_klopt =  (klasse.set_kaart.derde_kaart(tafel[speler_invoer[0]],
+        #    tafel[speler_invoer[1]]) == tafel[speler_invoer[2]])
            #kijkt of de set geldig is
-    #   else:
-    #       set_klopt = False
+        #else:
+        #    set_klopt = False
 
-    #   if time.perf_counter() - start < tijd and geldigheid_invoer == True:
+        #if time.perf_counter() - start < tijd and geldigheid_invoer == True:
             #alleen als de set binnen de tijd is en geldig is
-    #        set_klopt == True
+            #set_klopt == True
     '''Deze functie is het hele spel'''
     #punten_speler = 0
     #punten_computer = 0
@@ -65,7 +65,7 @@ def start_spel():
         #print(tafel)
         start = time.perf_counter()
         if time.perf_counter() - start < 5:
-            speler_invoer = [int(i)  for i in input().split()]
+            speler_invoer = [int(i)-1  for i in input().split()]
             if (klasse.set_kaart.derde_kaart(tafel[speler_invoer[0]],
             tafel[speler_invoer[1]]) == tafel[speler_invoer[2]]):
                 indices = speler_invoer[0], speler_invoer[1], speler_invoer[2]
