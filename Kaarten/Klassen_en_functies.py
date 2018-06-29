@@ -72,11 +72,12 @@ def maak_stapel():
 def kaarten_op_tafel(lijst):
     '''Functie die 12 willekeurige kaarten uit de stapel kiest en
        toevoegt aan de kaarten op tafel'''
-    tafelkaarten = []
+    tafelkaarten = [set_kaart()]*12
     for i in range(12):
         setkaart = lijst.pop(random.randrange(0, len(lijst)))
         tafelkaarten[i] = setkaart
     return tafelkaarten
 
-a = maak_stapel
+a = maak_stapel()
 print(a)
+print(kaarten_op_tafel(a))
