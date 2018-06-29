@@ -84,3 +84,5 @@ def zie_tafel():
     print(b[3:6])
     print(b[6:9])
     print(b[9:12])
+
+    hoi stein
