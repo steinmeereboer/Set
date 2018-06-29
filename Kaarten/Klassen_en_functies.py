@@ -69,17 +69,14 @@ def maak_stapel():
         set_stapel.append(set_kaart(i, j, k, l))
     return set_stapel
 
-#Functie die 12 willekeurige kaarten uit de stapel kiest en toevoegt aan de kaarten op tafel
 def kaarten_op_tafel(lijst):
-    kaarten_op_tafel = []
+    '''Functie die 12 willekeurige kaarten uit de stapel kiest en
+       toevoegt aan de kaarten op tafel'''
+    tafelkaarten = []
     for i in range(12):
-        setkaart = lijst.pop(random.randrange(0,len(set_stapel)))
-        kaarten_op_tafel.append(setkaart)
-    return kaarten_op_tafel
+        setkaart = lijst.pop(random.randrange(0, len(lijst)))
+        tafelkaarten[i] = setkaart
+    return tafelkaarten
 
-def zie_tafel():
-    b = kaarten_op_tafel()
-    print(b[0:3])
-    print(b[3:6])
-    print(b[6:9])
-    print(b[9:12])
+a = maak_stapel
+print(a)
