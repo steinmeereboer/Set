@@ -60,7 +60,7 @@ def weergave(kaarten_op_tafel):
     lab10 = font.render("10", 1, (0,0,0))
     lab11 = font.render("11", 1, (0,0,0))
     lab12 = font.render("12", 1, (0,0,0))
-
+    
     #Plaats de kaarten
     screen.blit(k1, (0, 0))
     screen.blit(k2, (150, 0))
@@ -74,20 +74,22 @@ def weergave(kaarten_op_tafel):
     screen.blit(k10, (0, 600))
     screen.blit(k11, (150, 600))
     screen.blit(k12, (300, 600))
-
+    
     #Plaats de labels
-    screen.blit(lab1, (0, 0))
-    screen.blit(lab2, (150, 0))
-    screen.blit(lab3, (300, 0))
-    screen.blit(lab4, (0, 200))
-    screen.blit(lab5, (150, 200))
-    screen.blit(lab6, (300, 200))
-    screen.blit(lab7, (0, 400))
-    screen.blit(lab8, (150, 400))
-    screen.blit(lab9, (300, 400))
-    screen.blit(lab10, (0, 600))
-    screen.blit(lab11, (150, 600))
-    screen.blit(lab12, (300, 600))
+    screen.blit(lab1, (75, 183))
+    screen.blit(lab2, (225, 183))
+    screen.blit(lab3, (375, 183))
+    screen.blit(lab4, (75, 383))
+    screen.blit(lab5, (225, 383))
+    screen.blit(lab6, (375, 383))
+    screen.blit(lab7, (75, 583))
+    screen.blit(lab8, (225, 583))
+    screen.blit(lab9, (375, 583))
+    screen.blit(lab10, (75, 783))
+    screen.blit(lab11, (225, 783))
+    screen.blit(lab12, (375, 783))
+
+
 
     #Laat de kaarten zien
     pg.display.update()

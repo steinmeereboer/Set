@@ -58,7 +58,9 @@ def start_spel():
     #punten_computer = 0
     #set_stapel = klasse.maak_stapel()
     #tafel = klasse.kaarten_op_tafel()
+    pygame.event.get()
     while len(set_stapel) > 2:
+        pygame.event.get()
         gui.weergave(tafel)
         #print(tafel)
         start = time.perf_counter()
