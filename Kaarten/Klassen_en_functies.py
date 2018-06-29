@@ -59,7 +59,7 @@ def vind_alle_sets(lijst):
     for kaart_1, kaart_2 in combinations(lijst, 2):
         kaart_3 = set_kaart.derde_kaart(kaart_1, kaart_2)
         if kaart_3 in lijst:
-            alle_sets.add({kaart_1, kaart_2, kaart_3})
+            alle_sets.append((kaart_1, kaart_2, kaart_3))
     return alle_sets
 
 def maak_stapel():
@@ -77,12 +77,3 @@ def kaarten_op_tafel(lijst):
         setkaart = lijst.pop(random.randrange(0, len(lijst)))
         tafelkaarten[i] = setkaart
     return tafelkaarten
-
-a = maak_stapel()
-#print(a)
-#print(kaarten_op_tafel(a))
-b = kaarten_op_tafel(a)
-#print(vind_set(b))
-print(vind_alle_sets(b))
-c = combinations(b, 2)
-print(list(c))
