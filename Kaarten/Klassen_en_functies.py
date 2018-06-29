@@ -55,7 +55,7 @@ def vind_set(lijst):
 
 def vind_alle_sets(lijst):
     '''Functie die alle sets vindt in een lijst van setkaarten'''
-    alle_sets = set()
+    alle_sets = []
     for kaart_1, kaart_2 in combinations(lijst, 2):
         kaart_3 = set_kaart.derde_kaart(kaart_1, kaart_2)
         if kaart_3 in lijst:
@@ -81,3 +81,8 @@ def kaarten_op_tafel(lijst):
 a = maak_stapel()
 #print(a)
 #print(kaarten_op_tafel(a))
+b = kaarten_op_tafel(a)
+#print(vind_set(b))
+print(vind_alle_sets(b))
+c = combinations(b, 2)
+print(list(c))
