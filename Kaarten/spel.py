@@ -31,7 +31,7 @@ def start_spel():
     set_stapel = klasse.maak_stapel()  #stapel met kaarten
     tafel = klasse.kaarten_op_tafel(set_stapel) #kaarten die op de tafel liggen
     #Laat de kaarten op tafel zien
-    Gui.weergave(tafel)
+    gui.weergave(tafel)
     #while len(set_stapel) >= 0 and len(tafel)==12: #
         #gui.weergave(tafel)
     #    start = time.perf_counter() #begin van je denktijd
