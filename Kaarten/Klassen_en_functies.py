@@ -70,11 +70,10 @@ def maak_stapel():
     return set_stapel
 
 #Functie die 12 willekeurige kaarten uit de stapel kiest en toevoegt aan de kaarten op tafel
-def kaarten_op_tafel():
+def kaarten_op_tafel(lijst):
     kaarten_op_tafel = []
-    set_stapel = maak_stapel()
     for i in range(12):
-        setkaart = set_stapel.pop(random.randrange(0,len(set_stapel)))
+        setkaart = lijst.pop(random.randrange(0,len(set_stapel)))
         kaarten_op_tafel.append(setkaart)
     return kaarten_op_tafel
 
@@ -84,5 +83,3 @@ def zie_tafel():
     print(b[3:6])
     print(b[6:9])
     print(b[9:12])
-
-    hoi stein
