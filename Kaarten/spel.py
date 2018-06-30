@@ -40,13 +40,24 @@ def start_spel():
     set_stapel = klasse.maak_stapel()  #stapel met kaarten
     tafel = klasse.kaarten_op_tafel(set_stapel) #kaarten die op de tafel liggen
     #Laat de kaarten op tafel zien
-    
-    while len(set_stapel) > 2:
+
+    if klasse.vind_alle_sets(tafel) == []: #er zijn geen sets op tafel
+        print("Er ligt geen set, we hebben drie kaarten vervangen.")
+        indices = 0, 1, 2
+        tafel = [i for j, i in enumerate(tafel) if j not in indices]
+        #verwijdert eerste 3 kaarten
+        time.sleep(2)
+        if len(set_stapel) >= 3:
+            for i in range(3):
+                nieuwe_kaart = set_stapel.pop(random.randrange(0, len(set_stapel)))
+                tafel.append(nieuwe_kaart)
+            
+    while len(tafel) >= 0:
         gui.weergave(tafel)
         start = time.perf_counter()
 
         if klasse.vind_alle_sets(tafel) == []: #er zijn geen sets op tafel
-            print("Er ligt geen set, we vervangen drie kaarten.")
+            print("Er ligt geen set, we hebben drie kaarten vervangen.")
             indices = 0, 1, 2
             tafel = [i for j, i in enumerate(tafel) if j not in indices]
             #verwijdert eerste 3 kaarten
@@ -55,6 +66,7 @@ def start_spel():
                 for i in range(3):
                     nieuwe_kaart = set_stapel.pop(random.randrange(0, len(set_stapel)))
                     tafel.append(nieuwe_kaart)
+
         
         speler_invoer = [int(i)-1  for i in input().split()] #invoer
 
@@ -71,7 +83,7 @@ def start_spel():
             set_klopt = False
 
         
-        if time.perf_counter() - start  and set_klopt == True < 5:
+        if time.perf_counter() - start< tijd  and set_klopt == True:
                 indices = speler_invoer[0], speler_invoer[1], speler_invoer[2]
                 tafel = [i for j, i in enumerate(tafel) if j not in indices]
                 #haalt de set weg
@@ -81,26 +93,25 @@ def start_spel():
                     for i in range(3):
                         nieuwe_kaart = set_stapel.pop(random.randrange(0, len(set_stapel)))
                         tafel.append(nieuwe_kaart) # vult tafel weer aan
-                else:
-                    print("Dit is een helaas geen set.")
 
                     
                 
         elif (time.perf_counter() - start >= tijd or
-              set_klopt == False or geldigheid_invoer == False):
+              set_klopt == False or geldigheid_invoer == False and klasse.vind_alle_sets(tafel) != []):
             #situaties waarbij de computer een set pakt
-            if geldigheid_invoer == False: #de invoer was ongeldig
+            if time.perf_counter() - start >= tijd: #je bent te langzaam
+                print("Helaas je bent te laat,", naam)
+            elif geldigheid_invoer == False: #de invoer was ongeldig
                 print("Deze invoer is niet mogelijk.")
             elif set_klopt == False:
                 print("Dit was helaas geen set")
-            elif time.perf_counter() - start >= tijd: #je bent te langzaam
-                print("Helaas je bent te laat,", naam)
+
 
             sets = klasse.vind_alle_sets(tafel) #computer pakt een set
             drie_kaarten = random.choice(sets)
             
-            print("De computer heeft wel een set gevonden:" , tafel.index(drie_kaarten[0]) , tafel.index(drie_kaarten[1]), tafel.index(drie_kaarten[2]))
-            time.sleep(6)
+            print("De computer heeft wel een set gevonden:" , tafel.index(drie_kaarten[0])+1 , tafel.index(drie_kaarten[1])+1, tafel.index(drie_kaarten[2])+1)
+            time.sleep(0.1)
             
             tafel.remove(drie_kaarten[2]) #set wordt verwijderd van de tafel
             tafel.remove(drie_kaarten[1])
