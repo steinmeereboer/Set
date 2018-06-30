@@ -50,12 +50,9 @@ def start_spel():
 
         #if time.perf_counter() - start < tijd and geldigheid_invoer == True:
             #alleen als de set binnen de tijd is en geldig is
-<<<<<<< HEAD
     #        set_klopt == True
-=======
             #set_klopt == True
     '''Deze functie is het hele spel'''
->>>>>>> bd97d0c79c854e5ec25951a25027ee354d7f7cc4
     #punten_speler = 0
     #punten_computer = 0
     #set_stapel = klasse.maak_stapel()
