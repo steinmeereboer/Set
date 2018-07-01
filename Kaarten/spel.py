@@ -93,7 +93,7 @@ def start_spel():
 
 
         elif ((time.perf_counter() - start >= tijd or
-              set_klopt is False or geldigheid_invoer is False)
+               set_klopt is False or geldigheid_invoer is False)
               and klasse.vind_alle_sets(tafel) != []):
             #Te langzaam, de set klopt niet of de invoer is ongeldig
             if time.perf_counter() - start >= tijd: #je bent te langzaam
