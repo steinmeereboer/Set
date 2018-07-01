@@ -6,6 +6,13 @@ import pygame
 import Klassen_en_functies as klasse
 import gui
 
+def kaarten_toevoegen(set_stapel,tafel):
+    if len(set_stapel) >= 3: #we pakken 3 kaarten en vroegen die aan te tafel toe
+        for i in range(3):
+            nieuwe_kaart = set_stapel.pop(random.randrange(0, len(set_stapel)))
+            tafel.append(nieuwe_kaart)
+
+
 def start_spel():
     '''Uitleg van de functie'''
     print("Leuk dat je Set! gaat spelen. Wat is je naam?") #intro van het spel
@@ -38,33 +45,27 @@ def start_spel():
     tafel = klasse.kaarten_op_tafel(set_stapel) #kaarten die op de tafel liggen
     #Laat de kaarten op tafel zien
             
-    while len(tafel) >= 12:
+    while len(tafel) >= 12:         #spel gaat door totdat er niet meer 12 kaarten op tafel liggen
         gui.weergave(tafel)
         start = time.perf_counter()
 
-        while klasse.vind_alle_sets(tafel) == []: #er zijn geen sets op tafel
+        while klasse.vind_alle_sets(tafel) == [] and len(tafel) >= 12: #er zijn geen sets op tafel
             print("Er ligt geen set, we hebben drie kaarten vervangen.")
-            indices = 0, 1, 2
+            indices = 0, 1, 2 #verwijdert eerste 3 kaarten
             tafel = [i for j, i in enumerate(tafel) if j not in indices]
-            #verwijdert eerste 3 kaarten
-            time.sleep(2)
-            if len(set_stapel) >= 3:
-                for i in range(3):
-                    nieuwe_kaart = set_stapel.pop(random.randrange(0, len(set_stapel)))
-                    tafel.append(nieuwe_kaart)
+            kaarten_toevoegen(set_stapel,tafel)
 
         
-        speler_invoer = [int(i)-1  for i in input().split()] #invoer
+        speler_invoer = [int(i)-1  for i in input().split()] #invoer van de speler
 
 
         geldigheid_invoer = (len(speler_invoer) == 3 and 0<=speler_invoer[0]<=11
             and 0<=speler_invoer[1]<=11 and 0<=speler_invoer[2]<=11)
                    #kijkt of het een geldige invoer is
 
-        if geldigheid_invoer == True:
+        if geldigheid_invoer == True: #kijkt of het een set is
             set_klopt =  (klasse.set_kaart.derde_kaart(tafel[speler_invoer[0]],
             tafel[speler_invoer[1]]) == tafel[speler_invoer[2]])
-           #kijkt of de set geldig is
         else:
             set_klopt = False
 
@@ -75,16 +76,13 @@ def start_spel():
                 #haalt de set weg
                 punten_speler += 1
                 print("Goed zo!")
-                if len(set_stapel) >= 3:
-                    for i in range(3):
-                        nieuwe_kaart = set_stapel.pop(random.randrange(0, len(set_stapel)))
-                        tafel.append(nieuwe_kaart) # vult tafel weer aan
+                kaarten_toevoegen(set_stapel,tafel)
 
                     
                 
         elif ((time.perf_counter() - start >= tijd or
               set_klopt == False or geldigheid_invoer == False) and klasse.vind_alle_sets(tafel) != []):
-            #situaties waarbij de computer een set pakt
+            #situaties waarbij de computer een set pakt: te langzaam, de set klopt niet of de invoer is ongeldig
             if time.perf_counter() - start >= tijd: #je bent te langzaam
                 print("Helaas je bent te laat,", naam)
             elif geldigheid_invoer == False: #de invoer was ongeldig
@@ -99,14 +97,11 @@ def start_spel():
             print("De computer heeft wel een set gevonden:" , tafel.index(drie_kaarten[0])+1 , tafel.index(drie_kaarten[1])+1, tafel.index(drie_kaarten[2])+1)
             time.sleep(5)
             
-            tafel.remove(drie_kaarten[2]) #set wordt verwijderd van de tafel
-            tafel.remove(drie_kaarten[1])
-            tafel.remove(drie_kaarten[0])
-            punten_computer += 1
-            if len(set_stapel) >= 3: # de tafel wordt weer aangevuld
-                for i in range(3):
-                    a = set_stapel.pop(random.randrange(0, len(set_stapel)))
-                    tafel.append(a)
+            for i in range(3): #set wordt verwijderd van de tafel
+                tafel.remove(drie_kaarten[i])
+ 
+            punten_computer += 1 #computer krijgt een punt
+            kaarten_toevoegen(set_stapel,tafel)
                     
     if punten_speler < punten_computer: #boodschap voor het einde
         boodschap = "Je hebt dus helaas verloren. Volgende keer beter."
@@ -115,6 +110,7 @@ def start_spel():
     if punten_speler == punten_computer:
         boodschap = "Het is gelijkspel geworden."
     pygame.quit()
+    
     return print(naam, ",je hebt", punten_speler, "punten en de computer heeft"
                  , punten_computer, "punten.", boodschap) #einde spel
 
