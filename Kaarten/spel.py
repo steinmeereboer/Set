@@ -1,4 +1,3 @@
-import
 
 '''Uitleg van dit document'''
 
