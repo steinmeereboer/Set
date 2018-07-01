@@ -1,3 +1,5 @@
+import
+
 '''Uitleg van dit document'''
 
 import random
@@ -22,8 +24,8 @@ def start_spel():
     invoer_moeilijkheidsgraad = input()
     while invoer_moeilijkheidsgraad not in  ["makkelijk", "normaal", "moeilijk", "extreem"]:
         print("Dit is helaas niet mogelijk, probeer het opnieuw: makkelijk, normaal, moeilijk, extreem.")
-        invoer_moeilijkheidsgraad = input()     
-    
+        invoer_moeilijkheidsgraad = input()
+
     #bepaalt de tijd
     if invoer_moeilijkheidsgraad == "makkelijk":
         tijd = 40
@@ -44,7 +46,7 @@ def start_spel():
     set_stapel = klasse.maak_stapel()  #stapel met kaarten
     tafel = klasse.kaarten_op_tafel(set_stapel) #kaarten die op de tafel liggen
     #Laat de kaarten op tafel zien
-            
+
     while len(tafel) >= 12:         #spel gaat door totdat er niet meer 12 kaarten op tafel liggen
         gui.weergave(tafel)
         start = time.perf_counter()
@@ -55,7 +57,7 @@ def start_spel():
             tafel = [i for j, i in enumerate(tafel) if j not in indices]
             kaarten_toevoegen(set_stapel,tafel)
 
-        
+
         speler_invoer = [int(i)-1  for i in input().split()] #invoer van de speler
 
 
@@ -69,7 +71,7 @@ def start_spel():
         else:
             set_klopt = False
 
-        
+
         if time.perf_counter() - start< tijd  and set_klopt == True:
                 indices = speler_invoer[0], speler_invoer[1], speler_invoer[2]
                 tafel = [i for j, i in enumerate(tafel) if j not in indices]
@@ -78,8 +80,8 @@ def start_spel():
                 print("Goed zo!")
                 kaarten_toevoegen(set_stapel,tafel)
 
-                    
-                
+
+
         elif ((time.perf_counter() - start >= tijd or
               set_klopt == False or geldigheid_invoer == False) and klasse.vind_alle_sets(tafel) != []):
             #situaties waarbij de computer een set pakt: te langzaam, de set klopt niet of de invoer is ongeldig
@@ -90,19 +92,19 @@ def start_spel():
             elif set_klopt == False:
                 print("Dit was helaas geen set")
 
-            
+
             sets = klasse.vind_alle_sets(tafel) #computer pakt een set
             drie_kaarten = random.choice(sets)
-            
+
             print("De computer heeft wel een set gevonden:" , tafel.index(drie_kaarten[0])+1 , tafel.index(drie_kaarten[1])+1, tafel.index(drie_kaarten[2])+1)
             time.sleep(5)
-            
+
             for i in range(3): #set wordt verwijderd van de tafel
                 tafel.remove(drie_kaarten[i])
- 
+
             punten_computer += 1 #computer krijgt een punt
             kaarten_toevoegen(set_stapel,tafel)
-                    
+
     if punten_speler < punten_computer: #boodschap voor het einde
         boodschap = "Je hebt dus helaas verloren. Volgende keer beter."
     if punten_speler > punten_computer:
@@ -110,7 +112,7 @@ def start_spel():
     if punten_speler == punten_computer:
         boodschap = "Het is gelijkspel geworden."
     pygame.quit()
-    
+
     return print(naam, ",je hebt", punten_speler, "punten en de computer heeft"
                  , punten_computer, "punten.", boodschap) #einde spel
 
