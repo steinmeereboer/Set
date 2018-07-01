@@ -1,4 +1,4 @@
-'''Uitleg van dit document'''
+'''Dit is de opdracht Set! van Fien, Stein en Olaf.'''
 
 import random
 import time
@@ -7,20 +7,20 @@ import Klassen_en_functies as klasse
 import gui
 
 def kaarten_toevoegen(set_stapel, tafel):
-    "..."
+    '''deze functie voegt kaarten toe'''
     if len(set_stapel) >= 3: #we pakken 3 kaarten en vroegen die aan te tafel toe
         for i in range(3):
             nieuwe_kaart = set_stapel.pop(random.randrange(0, len(set_stapel)))
             tafel.append(nieuwe_kaart)
 
 def intro_naam():
-    "..."
+    '''vraagt om naam'''
     print("Leuk dat je Set! gaat spelen. Wat is je naam?") #intro van het spel
     naam = input()
     return naam
 
 def tijd_keuze(naam):
-    "..."
+    '''bepaald de tijd'''
     print("Hallo", naam,
           ".Welke moeilijkheidsgraad wil je: makkelijk, normaal, moeilijk, extreem?")
     invoer_moeilijkheidsgraad = input()
@@ -45,7 +45,7 @@ def tijd_keuze(naam):
 
 
 def start_spel():
-    "..."
+    '''dit is het hele spel'''
     naam = intro_naam()
     tijd = tijd_keuze(naam)
 
