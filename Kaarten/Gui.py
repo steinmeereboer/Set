@@ -25,16 +25,16 @@ def weergave(kaarten_op_tafel):
     k3 = pg.transform.scale(b3, (150, 200))
 
     b4 = pg.image.load(str(kaarten_op_tafel[3])+'.png')
-    k4 = pg.transform.scale(b4, (150,200))
+    k4 = pg.transform.scale(b4, (150, 200))
 
     b5 = pg.image.load(str(kaarten_op_tafel[4])+'.png')
     k5 = pg.transform.scale(b5, (150, 200))
 
     b6 = pg.image.load(str(kaarten_op_tafel[5])+'.png')
-    k6 = pg.transform.scale(b6,(150,200))
+    k6 = pg.transform.scale(b6, (150, 200))
 
     b7 = pg.image.load(str(kaarten_op_tafel[6])+'.png')
-    k7 = pg.transform.scale(b7,(150,200))
+    k7 = pg.transform.scale(b7, (150, 200))
 
     b8= pg.image.load(str(kaarten_op_tafel[7])+'.png')
     k8 = pg.transform.scale(b8, (150, 200))
@@ -52,18 +52,18 @@ def weergave(kaarten_op_tafel):
     k12 = pg.transform.scale(b12, (150, 200))
 
     #Laad de labels
-    lab1 = font.render("1", 1, (0,0,0))
-    lab2 = font.render("2", 1, (0,0,0))
-    lab3 = font.render("3", 1, (0,0,0))
-    lab4 = font.render("4", 1, (0,0,0))
-    lab5 = font.render("5", 1, (0,0,0))
-    lab6 = font.render("6", 1, (0,0,0))
-    lab7 = font.render("7", 1, (0,0,0))
-    lab8 = font.render("8", 1, (0,0,0))
-    lab9 = font.render("9", 1, (0,0,0))
-    lab10 = font.render("10", 1, (0,0,0))
-    lab11 = font.render("11", 1, (0,0,0))
-    lab12 = font.render("12", 1, (0,0,0))
+    lab1 = font.render("1", 1, (0, 0, 0))
+    lab2 = font.render("2", 1, (0, 0, 0))
+    lab3 = font.render("3", 1, (0, 0, 0))
+    lab4 = font.render("4", 1, (0, 0, 0))
+    lab5 = font.render("5", 1, (0, 0, 0))
+    lab6 = font.render("6", 1, (0, 0, 0))
+    lab7 = font.render("7", 1, (0, 0, 0))
+    lab8 = font.render("8", 1, (0, 0, 0))
+    lab9 = font.render("9", 1, (0, 0, 0))
+    lab10 = font.render("10", 1, (0, 0, 0))
+    lab11 = font.render("11", 1, (0, 0, 0))
+    lab12 = font.render("12", 1, (0, 0, 0))
 
     #Plaats de kaarten
     screen.blit(k1, (0, 0))
