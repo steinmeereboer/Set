@@ -3,21 +3,20 @@
 import pygame as pg
 import Klassen_en_functies as kf
 
-pg.init()
-font = pg.font.SysFont('Arial', 15)
+pg.init()                               #Initialiseert pygame
+font = pg.font.SysFont('Arial', 15)     #Laadt het lettertype arial met grootte 15
 
 def weergave(kaarten_op_tafel):
     '''Uitleg van de functie'''
 
-    screen = pg.display.set_mode((450, 800))
-    screen.fill((255, 255, 255))
+    screen = pg.display.set_mode((450, 800))                #Initiaaliseer een 450x800 scherm
+    screen.fill((255, 255, 255))                            #Vult het scherm wit
 
     #Laad afbeelding en pas grootte aan
-    #kaarten_op_tafel=kf.kaarten_op_tafel()
 
-    b1 = pg.image.load(str(kaarten_op_tafel[0])+'.png')
-    k1 = pg.transform.scale(b1, (150, 200))
-
+    b1 = pg.image.load(str(kaarten_op_tafel[0])+'.png')     #Laadt kaart 1
+    k1 = pg.transform.scale(b1, (150, 200))                 #Schaal de kaart naar 150x200 zodat er 3x4 kaarten
+                                                            #Op 450x800 kan afgebeeld worden
     b2 = pg.image.load(str(kaarten_op_tafel[1])+'.png')
     k2 = pg.transform.scale(b2, (150, 200))
 
