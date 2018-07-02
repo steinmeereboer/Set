@@ -13,7 +13,9 @@ EEN, TWEE, DRIE = range(3)
 class set_kaart:
     '''Deze klasse definieert de eigenschappen van een setkaart'''
 
+
     def __eq__(self, other):
+        ''''Functie die bepaalt wanneer twee setkaarten gelijk zijn aan elkaar'''
         return (self.aantal == other.aantal and self.vorm == other.vorm
                 and self.kleur == other.kleur and self.vulling == other.vulling)
 
@@ -23,6 +25,7 @@ class set_kaart:
                 f'kleur={self.kleur},vulling={self.vulling})')
 
     def __init__(self, aantal=0, vorm=0, kleur=0, vulling=0):
+        '''Functie die de eigenschappen van een setkaart bepaalt'''
         self.aantal = aantal
         self.vorm = vorm
         self.kleur = kleur

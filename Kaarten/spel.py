@@ -141,5 +141,4 @@ def start_spel():
     return print(naam, ",je hebt", punten_speler, "punten en de computer heeft"
                  , punten_computer, "punten.", boodschap) #einde spel
 
-
 start_spel()
