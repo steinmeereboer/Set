@@ -7,20 +7,20 @@ import Klassen_en_functies as klasse
 import gui
 
 def kaarten_toevoegen(set_stapel, tafel):
-    '''deze functie voegt kaarten toe'''
-    if len(set_stapel) >= 3: #we pakken 3 kaarten en vroegen die aan te tafel toe
+    '''Functie die kaarten aan de tafel toevoegt'''
+    if len(set_stapel) >= 3: #We pakken drie kaarten en vroegen die aan te tafel toe
         for i in range(3):
             nieuwe_kaart = set_stapel.pop(random.randrange(0, len(set_stapel)))
             tafel.append(nieuwe_kaart)
 
 def intro_naam():
-    '''vraagt om naam'''
+    '''Functie die vraagt om de naam van de speler'''
     print("Leuk dat je Set! gaat spelen. Wat is je naam?") #intro van het spel
     naam = input()
     return naam
 
 def tijd_keuze(naam):
-    '''bepaald de tijd'''
+    '''Functie die de moeilijkheidsgraad bepaalt, en daarmee de tijd'''
     print("Hallo", naam,
           ".Welke moeilijkheidsgraad wil je: makkelijk, normaal, moeilijk, extreem?")
     invoer_moeilijkheidsgraad = input()
@@ -29,7 +29,7 @@ def tijd_keuze(naam):
               "probeer het opnieuw: makkelijk, normaal, moeilijk, extreem.")
         invoer_moeilijkheidsgraad = input()
 
-    #bepaalt de tijd
+    #Hier wordt de tijd bepaald
     if invoer_moeilijkheidsgraad == "makkelijk":
         tijd = 40
     if invoer_moeilijkheidsgraad == "normaal":
@@ -45,7 +45,7 @@ def tijd_keuze(naam):
 
 
 def start_spel():
-    '''dit is het hele spel'''
+    '''Functie die het spel is'''
     naam = intro_naam()
     tijd = tijd_keuze(naam)
 
@@ -77,7 +77,7 @@ def start_spel():
 
         if geldigheid_invoer is True: #kijkt of het een set is
             set_klopt = (klasse.set_kaart.derde_kaart(tafel[speler_invoer[0]],
-                            tafel[speler_invoer[1]]) == tafel[speler_invoer[2]])
+                         tafel[speler_invoer[1]]) == tafel[speler_invoer[2]])
         else:
             set_klopt = False
 

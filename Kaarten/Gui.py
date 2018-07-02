@@ -1,7 +1,11 @@
+'''Uitleg van dit document'''
+
 import pygame as pg
 import Klassen_en_functies as kf
+
 pg.init()
-font=pg.font.SysFont('Arial',15)
+font = pg.font.SysFont('Arial', 15)
+
 def weergave(kaarten_op_tafel):
     '''Uitleg van de functie'''
 

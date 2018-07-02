@@ -1,4 +1,4 @@
-'''Uitleg van dit document'''
+'''In dit document staat de klasse van setkaarten en de bijbehorende functies'''
 
 # pylint: disable = C0103
 
@@ -11,7 +11,7 @@ LEEG, VOL, GESTREEPT = range(3)
 EEN, TWEE, DRIE = range(3)
 
 class set_kaart:
-    '''Uitleg van de klasse'''
+    '''Deze klasse definieert de eigenschappen van een setkaart'''
 
     def __eq__(self, other):
         return (self.aantal == other.aantal and self.vorm == other.vorm
