@@ -1,4 +1,4 @@
-'''Uitleg van dit document'''
+'''Deze code zorgt voor een visualisatie van de kaarten'''
 
 import pygame as pg
 import Klassen_en_functies as kf
@@ -7,7 +7,7 @@ pg.init()                               #Initialiseert pygame
 font = pg.font.SysFont('Arial', 15)     #Laadt het lettertype arial met grootte 15
 
 def weergave(kaarten_op_tafel):
-    '''Uitleg van de functie'''
+    '''Functie die een lijst kaarten_op_tafel inleest en deze afbeeld'''
 
     screen = pg.display.set_mode((450, 800))                #Initiaaliseer een 450x800 scherm
     screen.fill((255, 255, 255))                            #Vult het scherm wit
