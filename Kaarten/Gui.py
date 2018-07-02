@@ -1,7 +1,9 @@
 '''Deze code zorgt voor een visualisatie van de kaarten'''
 
 import pygame as pg
-import Klassen_en_functies as kf
+import Klassen_en_functies
+
+#Klassen en functies hebben wij nodig voor de string functie van een kaart
 
 pg.init()                               #Initialiseert pygame
 font = pg.font.SysFont('Arial', 15)     #Laadt het lettertype arial met grootte 15
