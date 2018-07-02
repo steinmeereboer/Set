@@ -14,7 +14,7 @@ def weergave(kaarten_op_tafel):
     #Initialiseer een scherm met afmeting 450x800
     screen = pg.display.set_mode((450, 800))
     #Vul het scherm wit
-    screen.fill((255, 255, 255))                            
+    screen.fill((255, 255, 255))
 
     #Laad afbeelding en pas grootte aan
 
@@ -95,8 +95,6 @@ def weergave(kaarten_op_tafel):
     screen.blit(lab10, (75, 783))
     screen.blit(lab11, (225, 783))
     screen.blit(lab12, (375, 783))
-
-
 
     #Laat de kaarten zien
     pg.display.update()
